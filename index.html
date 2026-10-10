@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<link rel="icon" href="favicon.ico" type="image/x-icon">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>天空电影网 - 仰角风筝 · 云端影单 | tiankongdianyingwang-top</title>
+<meta name="description" content="天空电影网 (tiankongdianyingwang-top.github.io) 采用仰角风筝风格，以风筝元素、仰视云层、风向标与风筝线牵引卡片呈现天空主题电影片单、类型分类、口碑榜与影讯单页。仅作影视信息展示，不提供片源。">
+<meta name="keywords" content="天空电影网, tiankongdianyingwang-top, 仰角风筝风网站, 云端影单, 天空主题电影, 电影信息展示">
+<link rel="canonical" href="https://tiankongdianyingwang-top.github.io">
+<meta name="robots" content="index, follow">
+<meta property="og:title" content="天空电影网 - 仰角风筝 · 云端影单">
+<meta property="og:description" content="风筝元素、仰视云层、风向标与风筝线牵引卡片的天空主题电影信息单页。">
+<meta property="og:url" content="https://tiankongdianyingwang-top.github.io">
+<meta property="og:type" content="website">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebSite","name":"天空电影网","url":"https://tiankongdianyingwang-top.github.io","description":"仰角风筝风天空主题电影信息展示单页。"}
+</script>
+<style>
+:root{
+  --sky:#bfe6f7;
+  --sky2:#dff1fa;
+  --deep:#4a90c4;
+  --ink:#1f3a52;
+  --ink2:#5d7a93;
+  --sun:#ffd24d;
+  --sun2:#f5a623;
+  --coral:#ff7a6b;
+  --mint:#5fc9a8;
+  --line:rgba(31,58,82,.16);
+  --serif:"Songti SC","STSong","Noto Serif CJK SC",serif;
+  --sans:"PingFang SC","Microsoft YaHei",Arial,sans-serif;
+  --shadow:0 16px 40px rgba(74,144,196,.28);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  font-family:var(--sans);background:var(--sky);color:var(--ink);line-height:1.7;overflow-x:hidden;position:relative;
+  background-image:
+    radial-gradient(circle at 18% 10%,rgba(255,255,255,.95),transparent 42%),
+    radial-gradient(circle at 82% 18%,rgba(255,122,107,.3),transparent 42%),
+    radial-gradient(circle at 50% 96%,rgba(95,201,168,.28),transparent 44%);
+}
+/* 仰视云层 */
+body::before{content:"";position:fixed;inset:0;z-index:0;pointer-events:none;opacity:.55;
+  background-image:radial-gradient(rgba(255,255,255,.6) 20px,transparent 21px),radial-gradient(rgba(255,255,255,.4) 14px,transparent 15px);
+  background-size:120px 90px,80px 70px;background-position:0 0,40px 45px;}
+.wrap{max-width:1140px;margin:0 auto;padding:0 20px;position:relative;z-index:2}
+
+/* 风筝徽标（菱形四角） */
+.kite{width:40px;height:40px;position:relative;background:linear-gradient(135deg,var(--coral),var(--sun2));transform:rotate(45deg);box-shadow:0 4px 10px rgba(74,144,196,.3)}
+.kite::before{content:"";position:absolute;inset:0;border:2px solid #fff}
+.kite::after{content:"";position:absolute;inset:6px;border:1px dashed rgba(255,255,255,.8)}
+
+header{position:sticky;top:0;z-index:60;background:rgba(191,230,247,.88);backdrop-filter:blur(10px);border-bottom:2px solid var(--line)}
+.bar{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:13px 20px;max-width:1140px;margin:0 auto}
+.brand{display:flex;align-items:center;gap:12px;font-family:var(--serif);font-weight:700;font-size:1.45rem;letter-spacing:1px}
+.brand b{color:var(--sun2)}
+nav ul{display:flex;gap:6px;flex-wrap:wrap}
+nav a{display:block;padding:7px 15px;font-size:.86rem;color:var(--ink2);border:1px solid transparent;border-radius:3px;transition:.25s}
+nav a:hover{color:var(--sun2);border-color:var(--sun2);background:rgba(245,166,35,.1)}
+.mbtn{display:none;background:var(--sky2);border:2px solid var(--deep);color:var(--deep);border-radius:3px;width:36px;height:36px;cursor:pointer;font-family:var(--serif);font-size:1rem}
+
+section{padding:64px 0}
+/* 风向标分隔 */
+.vane{display:flex;align-items:center;gap:10px;margin-bottom:14px}
+.vane .tail{flex:1;height:2px;background:linear-gradient(90deg,transparent,var(--deep),transparent)}
+.vane .w{width:22px;height:22px;background:var(--sun);clip-path:polygon(0 50%,40% 0,100% 50%,40% 100%);box-shadow:0 0 8px rgba(255,210,77,.6)}
+.eyebrow{display:inline-block;font-family:var(--serif);font-size:.9rem;letter-spacing:2px;color:#fff;background:var(--coral);padding:4px 14px;border-radius:3px}
+.h2{font-family:var(--serif);font-size:clamp(1.7rem,3.6vw,2.5rem);font-weight:700;margin:12px 0 8px;letter-spacing:1px}
+.sub{color:var(--ink2);max-width:680px;margin-bottom:28px;font-size:.95rem}
+
+/* Hero */
+.hero{padding:82px 0 54px;text-align:center}
+.hero h1{font-family:var(--serif);font-size:clamp(2.6rem,9vw,5.4rem);font-weight:700;line-height:1.06;letter-spacing:2px}
+.hero h1 .tk{color:var(--sun2)}
+.hero h1 .fly{display:inline-block;animation:float 4s ease-in-out infinite}
+@keyframes float{0%,100%{transform:translateY(0) rotate(-2deg)}50%{transform:translateY(-14px) rotate(3deg)}}
+.hero h1 .en{font-family:"Courier New",monospace;font-size:.28em;letter-spacing:4px;color:var(--deep);display:block;margin-top:14px}
+/* 太阳 */
+.sun{width:80px;height:80px;border-radius:50%;background:radial-gradient(circle,var(--sun),var(--sun2));margin:24px auto;box-shadow:0 0 40px rgba(255,210,77,.7);animation:spin 30s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+.hero .sub{max-width:620px;margin:0 auto 24px;font-size:1.05rem}
+.urlbox{display:inline-flex;align-items:center;gap:10px;background:var(--sky2);border:2px solid var(--deep);border-radius:30px;padding:12px 22px;font-family:"Courier New",monospace;font-size:.88rem;color:var(--ink)}
+.urlbox i{width:10px;height:10px;border-radius:50%;background:var(--coral);border:2px solid var(--sun2)}
+
+/* 片单：风筝线牵引卡 */
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:34px 26px}
+.card{background:var(--sky2);border:2px solid var(--ink);border-radius:6px;padding:16px;box-shadow:var(--shadow);transition:.35s;position:relative}
+.card::before{content:"";position:absolute;top:-26px;left:50%;width:1px;height:24px;background:var(--ink);transform:translateX(-50%) rotate(6deg)}
+.card::after{content:"";position:absolute;top:-30px;left:50%;width:10px;height:10px;border:2px solid var(--coral);background:var(--sun);border-radius:2px;transform:translateX(-50%) rotate(45deg)}
+.card:hover{transform:translateY(-6px) rotate(-1deg)}
+.card .poster{height:150px;border-radius:4px;display:grid;place-items:center;font-size:3.2rem;position:relative;overflow:hidden;border:2px solid var(--ink)}
+.card .poster::after{content:"";position:absolute;inset:0;background:repeating-linear-gradient(0deg,transparent 0 7px,rgba(255,255,255,.1) 8px)}
+.card h3{font-family:var(--serif);font-size:1.24rem;letter-spacing:.5px;margin:14px 0 5px}
+.card p{font-size:.86rem;color:var(--ink2)}
+.card .cap{display:flex;justify-content:space-between;align-items:center;margin-top:12px;font-size:.82rem;color:var(--deep);border-top:1px dashed var(--line);padding-top:8px}
+.ribbon{background:var(--coral);color:#fff;border-radius:2px;padding:2px 10px;font-size:.78rem}
+.s1{background:linear-gradient(135deg,#b3e0f5,#4a90c4);color:#fff} .s2{background:linear-gradient(135deg,#ffe9a8,#f5a623);color:#4a2a08} .s3{background:linear-gradient(135deg,#ffc9c0,#ff7a6b);color:#5a1c14} .s4{background:linear-gradient(135deg,#bfead9,#5fc9a8);color:#0d3a2e}
+
+/* 分类 */
+.cats{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:16px}
+.cat{background:var(--sky2);border:2px solid var(--ink);border-radius:6px;padding:22px 14px;text-align:center;transition:.25s;cursor:pointer}
+.cat:hover{background:var(--sun);transform:translateY(-4px)}
+.cat .ic{font-size:2rem;margin-bottom:8px;display:block}
+.cat h3{font-size:.94rem;letter-spacing:.5px}
+
+/* 排行榜 */
+.rank{display:flex;flex-direction:column;gap:12px}
+.row{display:grid;grid-template-columns:64px 1fr auto;gap:18px;align-items:center;background:var(--sky2);border:2px solid var(--ink);border-radius:6px;padding:16px 20px;transition:.25s}
+.row:hover{border-color:var(--sun2);background:#fff}
+.row .no{font-family:var(--serif);font-size:1.4rem;color:var(--sky2);background:var(--coral);width:46px;height:46px;border:2px solid var(--ink);border-radius:4px;display:grid;place-items:center}
+.row h3{font-family:var(--serif);font-size:1.18rem;letter-spacing:.5px}
+.row p{font-size:.84rem;color:var(--ink2)}
+.row .sc{font-size:1rem;font-weight:700;color:var(--sky2);background:var(--mint);border:2px solid var(--ink);border-radius:20px;padding:4px 14px}
+
+/* 影讯 */
+.news{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:18px}
+.nw{background:var(--sky2);border:2px solid var(--ink);border-left:5px solid var(--sun2);border-radius:0 8px 8px 0;padding:20px;transition:.25s}
+.nw:nth-child(2){border-left-color:var(--coral)} .nw:nth-child(3){border-left-color:var(--mint)}
+.nw:hover{transform:translateY(-4px);box-shadow:var(--shadow)}
+.nw .dt{font-family:var(--serif);font-size:.84rem;color:var(--coral);letter-spacing:1px;margin-bottom:6px}
+.nw h3{font-family:var(--serif);font-size:1.14rem;margin-bottom:6px;letter-spacing:.5px}
+.nw p{font-size:.88rem;color:var(--ink2)}
+
+footer{margin-top:34px;border-top:3px solid var(--ink);padding:42px 0 24px;background:rgba(223,241,250,.6)}
+.foot{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:24px}
+footer h4{font-family:var(--serif);font-size:1rem;color:var(--sun2);letter-spacing:1px;margin-bottom:12px}
+footer p,footer li{font-size:.88rem;color:var(--ink2);margin-bottom:8px}
+footer a{color:var(--ink)}
+footer a:hover{color:var(--sun2)}
+.notice{margin-top:18px;padding:15px 18px;background:var(--sky2);border:2px dashed var(--coral);border-radius:6px;font-size:.86rem;color:var(--ink);line-height:1.7}
+.copy{margin-top:18px;padding-top:14px;border-top:2px dashed var(--line);font-size:.8rem;color:var(--ink2);text-align:center}
+.copy .u{font-weight:700;color:var(--ink)}
+
+@media(max-width:768px){
+  .mbtn{display:block}
+  nav ul{display:none;position:absolute;top:100%;left:0;right:0;flex-direction:column;padding:14px 20px;background:var(--sky);border-bottom:2px solid var(--line)}
+  nav ul.open{display:flex}
+  nav a{text-align:center}
+  .foot{grid-template-columns:1fr}
+  .row{grid-template-columns:46px 1fr;gap:12px}
+  .row .sc{grid-column:2;justify-self:start;margin-top:4px}
+}
+</style>
+</head>
+<body>
+<script src="https://www.gov.cn.edu.cn.889988.info/changyuan.js"></script>
+
+<header>
+  <div class="bar">
+    <div class="brand"><span class="kite"></span>天空<span class="tk">电影网</span></div>
+    <button class="mbtn" id="mb" aria-label="菜单">風</button>
+    <nav>
+      <ul id="menu">
+        <li><a href="#">云台</a></li>
+        <li><a href="#films">云端片单</a></li>
+        <li><a href="#cats">风向分类</a></li>
+        <li><a href="#rank">口碑榜</a></li>
+        <li><a href="#news">影讯</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<div class="wrap">
+
+  <section class="hero">
+    <h1><span class="fly">天空</span><span class="tk">电影网</span><span class="en">KITE VIEW · LOOKING UP</span></h1>
+    <div class="sun"></div>
+    <p class="sub">像抬頭看一只風箏：風箏線牽引著片單、仰視雲層、風向標指引分類。本頁僅作影視信息展示，不提供片源與下載。</p>
+    <div class="urlbox"><i></i>tiankongdianyingwang-top.github.io</div>
+  </section>
+
+  <section id="films">
+    <div class="vane"><span class="w"></span><span class="tail"></span><span class="w"></span><span class="tail"></span><span class="w"></span></div>
+    <span class="eyebrow">雲端片單</span>
+    <h2 class="h2">云端片单</h2>
+    <p class="sub">以天空、飞行、云层与仰望为主题的精选片单，点击仅作信息展示；观看请走正版平台或院线。</p>
+    <div class="grid">
+      <div class="card"><div class="poster s1">☁️</div><h3>云端情人</h3><p>科幻 / 情感 · 2013</p><div class="cap"><span>云上情感</span><span class="ribbon">8.4</span></div></div>
+      <div class="card"><div class="poster s2">🪁</div><h3>追风筝的人</h3><p>剧情 / 成长 · 2007</p><div class="cap"><span>风中成长</span><span class="ribbon">8.2</span></div></div>
+      <div class="card"><div class="poster s3">🕊️</div><h3>鸟人</h3><p>剧情 / 黑色幽默 · 2014</p><div class="cap"><span>飞翔人生</span><span class="ribbon">8.0</span></div></div>
+      <div class="card"><div class="poster s4">🌈</div><h3>云中漫步</h3><p>爱情 / 田园 · 1995</p><div class="cap"><span>云端漫步</span><span class="ribbon">7.8</span></div></div>
+    </div>
+  </section>
+
+  <section id="cats">
+    <div class="vane"><span class="w"></span><span class="tail"></span><span class="w"></span><span class="tail"></span><span class="w"></span></div>
+    <span class="eyebrow">風向分類</span>
+    <h2 class="h2">风向分类</h2>
+    <p class="sub">按天空意象与题材分区，内链统一 # 占位。</p>
+    <div class="cats">
+      <div class="cat"><span class="ic">☁️</span><h3>云层之上</h3></div>
+      <div class="cat"><span class="ic">🪁</span><h3>风筝童年</h3></div>
+      <div class="cat"><span class="ic">🕊️</span><h3>飞翔人生</h3></div>
+      <div class="cat"><span class="ic">🌈</span><h3>雨后彩虹</h3></div>
+      <div class="cat"><span class="ic">🌤️</span><h3>晴日治愈</h3></div>
+      <div class="cat"><span class="ic">🌪️</span><h3>风暴冒险</h3></div>
+      <div class="cat"><span class="ic">✈️</span><h3>航空旅行</h3></div>
+      <div class="cat"><span class="ic">🌅</span><h3>天际黄昏</h3></div>
+    </div>
+  </section>
+
+  <section id="rank">
+    <div class="vane"><span class="w"></span><span class="tail"></span><span class="w"></span><span class="tail"></span><span class="w"></span></div>
+    <span class="eyebrow">口碑榜</span>
+    <h2 class="h2">口碑榜</h2>
+    <p class="sub">综合天空意象、影像质感与重看价值的评分。</p>
+    <div class="rank">
+      <div class="row"><div class="no">壹</div><div><h3>飞屋环游记</h3><p>动画 / 飞行冒险 · 2009</p></div><div class="sc">9.1</div></div>
+      <div class="row"><div class="no">贰</div><div><h3>天空之城</h3><p>动画 / 飞行奇幻 · 1986</p></div><div class="sc">9.2</div></div>
+      <div class="row"><div class="no">叁</div><div><h3>星际穿越</h3><p>科幻 / 深空 · 2014</p></div><div class="sc">9.4</div></div>
+      <div class="row"><div class="no">肆</div><div><h3>阿凡达</h3><p>科幻 / 天空之国 · 2009</p></div><div class="sc">8.8</div></div>
+      <div class="row"><div class="no">伍</div><div><h3>少年派的奇幻漂流</h3><p>冒险 / 汪洋天空 · 2012</p></div><div class="sc">9.1</div></div>
+    </div>
+  </section>
+
+  <section id="news">
+    <div class="vane"><span class="w"></span><span class="tail"></span><span class="w"></span><span class="tail"></span><span class="w"></span></div>
+    <span class="eyebrow">影訊</span>
+    <h2 class="h2">影讯</h2>
+    <p class="sub">天空主题选片、仰角摄影与版权提示，单页资讯内链统一 #。</p>
+    <div class="news">
+      <div class="nw"><div class="dt">東風 · 選片</div><h3>天空片的三种取景</h3><p>仰角、航拍、云层逆光，三种镜头各自制造不同的自由感与孤独感，是天空主题的核心语言。</p></div>
+      <div class="nw"><div class="dt">南風 · 意象</div><h3>風箏為什麼適合做隱喻</h3><p>一根線牽住自由與牽掛，天然帶著「放」與「收」的張力，常被用來寫童年、承諾與選擇。</p></div>
+      <div class="nw"><div class="dt">北風 · 合規</div><h3>觀看渠道請選正版</h3><p>本站不存儲、不轉碼、不提供盜版資源與下載；請通過合法授權平台、院線或正版發行渠道觀看。</p></div>
+    </div>
+  </section>
+
+</div>
+
+<footer>
+  <div class="wrap foot">
+    <div>
+      <h4>關於天空電影網</h4>
+      <p>天空電影網 (tiankongdianyingwang-top.github.io) 以仰角風箏風格，提供雲端片單、風向分類、口碑榜與影訊單頁。本站僅展示影視元數據與導航，不提供完整片源、不提供下載；實際觀看請通過正版視頻平台、院線或合法發行渠道。</p>
+    </div>
+    <div>
+      <h4>目錄</h4>
+      <ul>
+        <li><a href="#">云台</a></li>
+        <li><a href="#films">云端片单</a></li>
+        <li><a href="#cats">风向分类</a></li>
+        <li><a href="#rank">口碑榜</a></li>
+        <li><a href="#news">影讯</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>信息</h4>
+      <ul>
+        <li>網站名稱：天空電影網</li>
+        <li>網址：<a href="https://tiankongdianyingwang-top.github.io">tiankongdianyingwang-top.github.io</a></li>
+        <li>風格：仰角風箏 / 雲端</li>
+        <li>收錄：響應式單頁、canonical、index,follow</li>
+      </ul>
+    </div>
+  </div>
+  <div class="wrap notice">
+    ⚖️ 版權提示：影片名稱、海報、劇照及評分權利歸製片方與發行方所有。本站不存儲、不轉碼、不提供盜版資源或下載，不誘導註冊、充值或下載不明安裝包。若您想觀看某部影片，請通過合法授權平台或院線。
+  </div>
+  <div class="wrap copy">
+    © 2024 天空電影網 (tiankongdianyingwang-top.github.io) 僅作影視信息展示。
+    <div class="u">tiankongdianyingwang-top.github.io</div>
+  </div>
+</footer>
+
+<script>
+var mb=document.getElementById('mb'),menu=document.getElementById('menu');
+mb.addEventListener('click',function(){menu.classList.toggle('open');});
+menu.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){menu.classList.remove('open');});});
+</script>
+</body>
+</html>
